@@ -1,9 +1,10 @@
 import re
+from pathlib import Path
 
 
-def Rename(new_directory, current_file_name, file_extension):
+def seq_rename(new_directory: str, current_file_name: str, file_extension: str):
     regex_search = re.search(r'(\([0-9]+\))', current_file_name)
-    if new_directory.joinpath(f'{current_file_name}{file_extension}').exists():
+    if Path(new_directory).joinpath(f'{current_file_name}{file_extension}').exists():
         if regex_search:
             file_num = re.sub('[()]', '', regex_search.group(0))
             file_name_no_num = re.sub('[()]', '', re.sub(regex_search.group(0), '', current_file_name)).strip()
@@ -18,4 +19,3 @@ def Rename(new_directory, current_file_name, file_extension):
         return Rename(new_directory, new_file_name, file_extension)
     else:
         return f'{new_file_name}{file_extension}'
-
