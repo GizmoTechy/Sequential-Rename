@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: sequential-rename
-Version: 1.0.0
+Version: 1.0.1
 Summary: A small package for sequentially renaming files with the same name.
 Home-page: https://github.com/GizmoTechy/Sequential-Rename
 Author: Stefan Mladenovic (Gizmotechy)
