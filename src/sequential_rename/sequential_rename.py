@@ -17,6 +17,6 @@ def seq_rename(new_directory: Union[str, Path], current_file_name: str, file_ext
         return f'{current_file_name}{file_extension}'
 
     if new_directory.joinpath(f'{new_file_name}{file_extension}').exists():
-        return Rename(new_directory, new_file_name, file_extension)
+        return seq_rename(new_directory, new_file_name, file_extension)
     else:
         return f'{new_file_name}{file_extension}'
