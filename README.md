@@ -4,5 +4,7 @@ A small rename function I created to handle documents that have the same file na
 
 For example:
 ```
+from sequential_rename.sequential_rename import seq_rename
+
 new_doc_name = seq_rename(r'C:\Users\[USERNAME]\Documents', 'test', '.csv')
 ```

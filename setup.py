@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="sequential_rename",
-    version="1.0.1",
+    version="1.0.2",
     author="Stefan Mladenovic (Gizmotechy)",
     author_email="stefan.mladenovic@live.com",
     description="A small package for sequentially renaming files with the same name.",

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: sequential-rename
-Version: 1.0.1
+Version: 1.0.2
 Summary: A small package for sequentially renaming files with the same name.
 Home-page: https://github.com/GizmoTechy/Sequential-Rename
 Author: Stefan Mladenovic (Gizmotechy)
@@ -21,6 +21,8 @@ A small rename function I created to handle documents that have the same file na
 
 For example:
 ```
+from sequential_rename.sequential_rename import seq_rename
+
 new_doc_name = seq_rename(r'C:\Users\[USERNAME]\Documents', 'test', '.csv')
 ```
 
