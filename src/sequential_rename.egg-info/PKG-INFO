@@ -1,25 +1,43 @@
-Metadata-Version: 2.1
-Name: sequential-rename
-Version: 1.0.3
+Metadata-Version: 2.4
+Name: sequential_rename
+Version: 1.0.4
 Summary: A small package for sequentially renaming files with the same name.
-Home-page: https://github.com/GizmoTechy/Sequential-Rename
-Author: Stefan Mladenovic (Gizmotechy)
-Author-email: stefan.mladenovic@live.com
-Project-URL: Bug Tracker, https://github.com/GizmoTechy/Sequential-Rename/issues
+Author-email: "Stefan Mladenovic (Gizmotechy)" <stefan.mladenovic@live.com>
+License-Expression: GPL-3.0-or-later
+Project-URL: Homepage, https://github.com/GizmoTechy/Sequential-Rename
+Project-URL: Issues, https://github.com/GizmoTechy/Sequential-Rename/issues
 Classifier: Programming Language :: Python :: 3
-Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
 Classifier: Operating System :: OS Independent
-Requires-Python: >=3.6
+Requires-Python: >=3.10
 Description-Content-Type: text/markdown
 License-File: LICENSE
+Requires-Dist: paramiko
+Requires-Dist: pysftp
+Dynamic: license-file
 
-# Rename-Sequential-Files
+# Sequentially Rename Files
 
-A small rename function I created to handle documents that have the same file name during automated copy jobs. This function will allow the files to be copied by just appending a (#) to the end of the file name similar to how file systems do so. You need to pass the new directory, current file name, and the files extension and the function will return the new name with (#) if no file with the same name already exists.
+A small rename function I created to handle documents that have the same 
+file name during automated copy jobs. This function will allow the files 
+to be copied by just appending a (#) to the end of the file name similar 
+to how file systems do so. You need to pass the new directory, current 
+file name, and the files extension and the function will return the new 
+name with (#) if no file with the same name already exists.
 
-For example:
-```
-from sequential_rename.sequential_rename import seq_rename
+If 'test.csv' exists, then the new name would become 'test (1).csv'. This
+would also continue increasing the number if the new names already exist:
+'test (1).csv', 'test (2).csv', 'test (3).csv', etc. 
 
-new_doc_name = seq_rename(r'C:\Users\[USERNAME]\Documents', 'test', '.csv')
-```
+### seq_rename(new_directory, current_file_name, file_extension):
+
+Sequentially rename documents on your local or networked file system.  
+
+### pysftp_seq_rename(pysftp.Connection, new_directory, current_file_name, file_extension):
+
+Sequentially rename documents on an FTP/SFTP site using your pysftp 
+Connection.
+
+### paramiko_seq_rename(paramiko.SFTPClient, new_directory, current_file_name, file_extension):
+
+Sequentially rename documents on an FTP/SFTP site using your paramiko 
+SFTPClient connection.
