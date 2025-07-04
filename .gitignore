@@ -1,0 +1,4 @@
+.pypirc
+.venv/
+dist/
+src/sequential_rename.egg-info/
